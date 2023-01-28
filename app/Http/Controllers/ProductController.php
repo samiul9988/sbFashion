@@ -11,7 +11,8 @@ class ProductController extends Controller
     public function add_product()
     {
         $categories = Category::all();
-        return view('admin.layouts.product.product',compact('categories'));
+        $products = Product::all();
+        return view('admin.layouts.product.product',compact('categories','products'));
     }
 
     public function store_product(Request $request)
