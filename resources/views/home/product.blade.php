@@ -12,7 +12,7 @@
                 <div class="option_container">
                    <div class="options">
                       <a href="" class="option1">
-                      Men's Shirt
+                      Product Details
                       </a>
                       <a href="" class="option2">
                       Buy Now
@@ -26,9 +26,18 @@
                    <h5>
                     {{ $product->title }}
                    </h5>
-                   <h6>
+                   @if ($product->discount_price!=null)
+                    <h6 style="color:red">
+                        {{ $product->discount_price }}
+                    </h6>
+                    <h6 style="text-decoration: line-through; color:blue">
+                        {{ $product->price }}
+                    </h6>
+                    @else
+                   <h6 style="color:blue">
                     {{ $product->price }}
                    </h6>
+                   @endif
                 </div>
              </div>
           </div>
