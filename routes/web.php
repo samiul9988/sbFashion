@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,14 @@ Route::get('/categoryForm',[AdminController::class,'categoryForm'])->name('categ
 
 Route::post('/store_category',[AdminController::class,'add_category'])->name('store_category');
 
-Route::get('/add_product',[AdminController::class,'add_product'])->name('add_product');
+Route::get('/add_product',[ProductController::class,'add_product'])->name('add_product');
 
-Route::post('/store_product',[AdminController::class,'store_product'])->name('store_product');
+Route::post('/store_product',[ProductController::class,'store_product'])->name('store_product');
+
+Route::get('/show_product',[ProductController::class,'show_product'])->name('show_product');
+
+Route::get('/delete_product/{id}',[ProductController::class,'delete_product'])->name('delete_product');
+
+Route::get('/edit_product/{id}',[ProductController::class,'edit_product'])->name('edit_product');
+
+Route::put('/update_product/{id}',[ProductController::class,'update_product'])->name('update_product');

@@ -37,39 +37,5 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function add_product()
-    {
-        return view('admin.layouts.product.product');
-    }
-
-    public function store_product(Request $request)
-    {
-
-        $request->validate([
-            'title' => 'required',
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048',
-            'category' => 'required',
-            'price' => 'required',
-            'discount_price' => 'required'
-        ]);
-
-        $product = new Product();
-
-        $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('images'), $imageName);
-
-
-
-        $product->title = $request->input('title');
-        $product->description = $request->input('description');
-        $product->image = $request->file('image');
-        $product->category = $request->input('category');
-        $product->quantity = $request->input('quantity');
-        $product->price = $request->input('price');
-        $product->discount_price = $request->input('discount_price');
-
-        $product->save();
-
-        return redirect()->back();
-    }
+    
 }
