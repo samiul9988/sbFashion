@@ -32,10 +32,12 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Category</label>
-            <select name="category" id="">
-                <option value="{{ $products->category }}" selected="">Select AnyOne</option>
+            <select name="category" id="" class="form-control">
+                <option selected="">Select AnyOne</option>
                 @foreach ($categories as $category)
-                <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                <option value="{{ $category->id }}"
+                    {{ $products->category == $category->id ? 'selected' : ''}}>
+                    {{ $category->category_name }}</option>
                 @endforeach
             </select>
           </div>

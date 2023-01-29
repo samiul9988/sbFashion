@@ -50,3 +50,13 @@ Route::get('/delete_product/{id}',[ProductController::class,'delete_product'])->
 Route::get('/edit_product/{id}',[ProductController::class,'edit_product'])->name('edit_product');
 
 Route::put('/update_product/{id}',[ProductController::class,'update_product'])->name('update_product');
+
+Route::get('/product_details/{id}',[ProductController::class,'product_details'])->name('product_details');
+
+Route::post('/add_cart/{id}',[ProductController::class,'add_cart'])->name('add_cart');
+
+Route::get('/show_cart',[ProductController::class,'show_cart'])->name('show_cart');
+
+Route::get('/remove_cart/{id}',[ProductController::class,'remove_cart'])->name('remove_cart');
+
+Route::get('/cash_order',[ProductController::class,'cash_order'])->name('cash_order');

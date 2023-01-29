@@ -56,21 +56,19 @@
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->description }}</td>
                     <td>
-                        <img src="/images/{{ $product->image }}">
+                        <img style="height: 200px; width: 200px;" src="/images/{{ $product->image }}">
                     </td>
                     <td>{{ $product->category }}</td>
                     <td>{{ $product->quantity }}</td>
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->discount_price }}</td>
-                    <td class="project-actions text-right">
-                        <a class="btn btn-info btn-sm" href="{{ route('edit_product',$product->id) }}">
-                            <i class="fas fa-pencil-alt">
-                            </i>
+                    <td class="project-actions text-center">
+                        <a class="btn btn-info btn-sm float" href="{{ route('edit_product',$product->id) }}">
+
                             Edit
                         </a>
                         <a class="btn btn-danger btn-sm" href="{{ route('delete_product',$product->id) }}">
-                            <i class="fas fa-trash-alt">
-                            </i>
+
                             Delete
                         </a>
                     </td>
