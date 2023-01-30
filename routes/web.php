@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripePaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,8 @@ Route::get('/show_cart',[ProductController::class,'show_cart'])->name('show_cart
 Route::get('/remove_cart/{id}',[ProductController::class,'remove_cart'])->name('remove_cart');
 
 Route::get('/cash_order',[ProductController::class,'cash_order'])->name('cash_order');
+
+Route::get('stripe/{totalprice}',[ProductController::class,'stripe'])->name('stripe');
+
+Route::post('stripe', [StripePaymentController::class,'stripePost'])->name('stripe.post');
+

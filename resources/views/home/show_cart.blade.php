@@ -98,7 +98,7 @@
                   <div class="c">
                     <h6 class="d">Proceed to order</h6>
                     <a class="btn btn-success" href="{{ route('cash_order') }}">Cash ON Delivery</a>
-                    <a class="btn btn-info" href="">Pay Using Card</a>
+                    <a class="btn btn-info" href="{{ route('stripe',$totalprice) }}">Pay Using Card</a>
                   </div>
               </div>
             </div>

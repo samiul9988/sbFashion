@@ -195,4 +195,9 @@ class ProductController extends Controller
         }
         return redirect()->back();
     }
+
+    public function stripe($totalprice)
+    {
+        return view('home.stripe',compact('totalprice'));
+    }
 }
