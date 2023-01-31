@@ -18,18 +18,11 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('address')->nullable();
-
-            $table->string('user_id')->nullable();
-            $table->string('quantity')->nullable();
-            $table->string('price')->nullable();
-            $table->string('image')->nullable();
-            $table->string('product_id')->nullable();
-
-            $table->string('payment_status')->nullable();
-            $table->string('delivery_status')->nullable();
-
-            $table->timestamps();
+            $table->text('address')->nullable();
+            $table->double('amount')->nullable();
+            $table->string('currency')->nullable();
+            $table->string('status')->nullable();
+            $table->string('transaction_id')->nullable();
         });
     }
 

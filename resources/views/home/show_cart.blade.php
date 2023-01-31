@@ -97,8 +97,9 @@
                   </div>
                   <div class="c">
                     <h6 class="d">Proceed to order</h6>
-                    <a class="btn btn-success" href="{{ route('cash_order') }}">Cash ON Delivery</a>
-                    <a class="btn btn-info" href="{{ route('stripe',$totalprice) }}">Pay Using Card</a>
+                    <a class="btn btn-success" href="{{ route('checkout') }}">Pay Now</a>
+                    {{-- <a class="btn btn-info" href="{{ route('example1') }}">Pay Using Card</a> --}}
+
                   </div>
               </div>
             </div>
@@ -111,6 +112,17 @@
 
          </p>
       </div>
+      <script>
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                tag.parentNode.insertBefore(script, tag);
+            };
+
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
       <!-- jQery -->
       <script src="home/js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
