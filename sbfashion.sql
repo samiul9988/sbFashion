@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 01, 2023 at 08:55 AM
+-- Generation Time: Feb 01, 2023 at 12:53 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -56,7 +56,14 @@ INSERT INTO `carts` (`id`, `name`, `email`, `phone`, `address`, `product_title`,
 (30, 'MD JUBAYER HOSSAIN', 'user@gmail.com', '01633745588', 'Mirpur 12', 'Toy', '4', '1', '1674902024.png', '4', '2', '2023-01-31 05:16:44', '2023-01-31 05:16:44'),
 (31, 'MD JUBAYER HOSSAIN', 'user@gmail.com', '01633745588', 'Mirpur 12', 'Toy', '16', '4', '1674902024.png', '4', '2', '2023-01-31 06:21:59', '2023-01-31 06:21:59'),
 (32, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Fancy Sarees', '300', '1', '1674901705.png', '9', '3', '2023-02-01 01:50:59', '2023-02-01 01:50:59'),
-(33, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '80', '1', '1674899430.png', '1', '3', '2023-02-01 01:51:05', '2023-02-01 01:51:05');
+(33, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '80', '1', '1674899430.png', '1', '3', '2023-02-01 01:51:05', '2023-02-01 01:51:05'),
+(34, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Women', '20', '1', '1674901982.png', '7', '3', '2023-02-01 06:07:53', '2023-02-01 06:07:53'),
+(35, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '80', '20', '1674902024.png', '4', '3', '2023-02-01 06:19:13', '2023-02-01 06:19:13'),
+(36, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '4', '1', '1674902024.png', '4', '3', '2023-02-01 06:19:19', '2023-02-01 06:19:19'),
+(37, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '4', '1', '1674902024.png', '4', '3', '2023-02-01 06:19:24', '2023-02-01 06:19:24'),
+(38, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Ladies Frock', '500', '1', '1674901633.png', '8', '3', '2023-02-01 06:19:40', '2023-02-01 06:19:40'),
+(39, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Ladies Frock', '500', '1', '1674901633.png', '8', '3', '2023-02-01 06:19:49', '2023-02-01 06:19:49'),
+(40, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Ladies Frock', '500', '1', '1674901633.png', '8', '3', '2023-02-01 06:19:54', '2023-02-01 06:19:54');
 
 -- --------------------------------------------------------
 
@@ -153,9 +160,13 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
-(9, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', 'Delivered', '63d904f31cd36', 'BDT', '2021-02-18 07:33:29.000000', '2023-02-01 01:50:23.000000'),
-(10, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', '', '63d9fe6ed4618', 'BDT', NULL, NULL),
-(11, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', 'Delivered', '63da19f419ebd', 'BDT', NULL, '2023-02-01 02:53:14.000000');
+(9, 'Jahid', 'jahid@mail.com', '8801752589635', 200, 'Mirpur', 'Delivered', '63d904f31cd36', 'BDT', '2021-02-18 07:33:29.000000', '2023-02-01 01:50:23.000000'),
+(10, 'Noman', 'Noman@mail.com', '01654874725', 100, 'Uttora', '', '63d9fe6ed4618', 'BDT', NULL, NULL),
+(11, 'Mortoza', 'Mortoza@mail.com', '88013214587', 500, 'Mohakhali', 'Delivered', '63da19f419ebd', 'BDT', NULL, '2023-02-01 02:53:14.000000'),
+(12, 'Rakib', 'samiul@gmail.com', '01633749988', 10, 'Gazipur', 'Delivered', '63da4fc2b09b8', 'BDT', NULL, '2023-02-01 05:55:29.000000'),
+(13, 'Masud', 'jubayer@gmail.com', '01763099924', 10, 'Gulshan dhaka', 'Pending', '63da50a19b845', 'BDT', NULL, NULL),
+(14, 'nnnnnnnn', 'n@example.com', '01711524242', 10, 'Customer Address', 'Pending', '63da544921447', 'BDT', NULL, NULL),
+(15, 'John Doe', 'you@example.com', '01711xxxxxx', 10, 'Customer Address', 'Pending', '63da5631b62fa', 'BDT', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -212,12 +223,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `description`, `image`, `category`, `quantity`, `price`, `discount_price`, `created_at`, `updated_at`) VALUES
-(1, 'Shirt', 'Amazon\'s Toys & Games store ', '1674899430.png', 'T-Shirt', 7000, 580, '80.00', '2023-01-26 04:58:19', '2023-01-28 03:50:30'),
-(4, 'Toy', 'drfgsafggrv', '1674902024.png', 'Men\'s Shirt', 4721, 74, '4.00', '2023-01-27 23:57:38', '2023-01-28 04:33:44'),
-(7, 'Women', 'Amazon\'s Toys & Games store ', '1674901982.png', 'T-Shirt', 15000, 520, '20.00', '2023-01-28 01:38:55', '2023-01-28 04:33:02'),
-(8, 'Ladies Frock', 'Amazon\'s Toys & Games store features', '1674901633.png', 'Women\'s Dress', 450, 35000, '500.00', '2023-01-28 04:27:13', '2023-01-28 04:27:13'),
-(9, 'Fancy Sarees', 'Amazon\'s Toys & Games store', '1674901705.png', 'Women\'s Dress', 652, 45000, '300.00', '2023-01-28 04:28:25', '2023-01-28 04:28:25'),
-(11, 'reter', 'ertger', '1674987189.jpg', '1', 54, 456, '65.00', '2023-01-29 04:13:09', '2023-01-29 04:13:09');
+(1, 'Shirt', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n', '1674899430.png', 'T-Shirt', 7000, 580, '80.00', '2023-01-26 04:58:19', '2023-01-28 03:50:30'),
+(4, 'Shirt', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n', '1674902024.png', 'Men\'s Shirt', 4721, 420, '20.00', '2023-01-27 23:57:38', '2023-01-28 04:33:44'),
+(7, 'Women', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n ', '1674901982.png', 'T-Shirt', 15000, 520, '20.00', '2023-01-28 01:38:55', '2023-01-28 04:33:02'),
+(8, 'Ladies Frock', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n', '1674901633.png', 'Women\'s Dress', 450, 35000, '500.00', '2023-01-28 04:27:13', '2023-01-28 04:27:13'),
+(9, 'Fancy Sarees', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n', '1674901705.png', 'Women\'s Dress', 652, 45000, '300.00', '2023-01-28 04:28:25', '2023-01-28 04:28:25'),
+(11, 'reter', ' Men\'s Premium T-Shirt is in stock. We will print it as soon as you order it.\r\n\r\n', '1674987189.jpg', '1', 54, 456, '65.00', '2023-01-29 04:13:09', '2023-01-29 04:13:09');
 
 -- --------------------------------------------------------
 
@@ -239,7 +250,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('b9axd761pGx8D6Pq17YIjRSzZkzGiLIiOu8bevjk', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibHBtdjZKa1ZDdjUySWxuSjl0dEljQTZjMDBzY3duaGNTS1hMV05ZSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9zYmZhc2hpb24udGVzdC9wcmludF9wZGYvMTAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozO30=', 1675241624);
+('Pr9AkeC1NuYi4FAq64zcqiyuXYxUnKbK20Yyk7fg', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSG10SjRNcGV0T3A1Y3hidGRIc1FGVHdRcTljVjFtandyakRhMU1iWCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9zYmZhc2hpb24udGVzdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjM7fQ==', 1675255738);
 
 -- --------------------------------------------------------
 
@@ -353,7 +364,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -377,7 +388,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
