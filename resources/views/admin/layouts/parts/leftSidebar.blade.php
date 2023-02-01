@@ -71,6 +71,31 @@
 
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Order
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('order') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Order</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('category') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Show Category</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>

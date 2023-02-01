@@ -97,8 +97,8 @@
                   </div>
                   <div class="c">
                     <h6 class="d">Proceed to order</h6>
-                    <a class="btn btn-success" href="{{ route('checkout') }}">Pay Now</a>
-                    {{-- <a class="btn btn-info" href="{{ route('example1') }}">Pay Using Card</a> --}}
+                    <a class="btn btn-success" href="{{ route('checkout') }}">Pay Using Card</a>
+                    <a class="btn btn-info" href="{{ route('cash_order') }}">Cash On Delivery</a>
 
                   </div>
               </div>

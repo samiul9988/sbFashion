@@ -200,4 +200,10 @@ class ProductController extends Controller
     {
         return view('home.stripe',compact('totalprice'));
     }
+
+    public function order()
+    {
+        $orders = Order::all();
+        return view('admin.layouts.product.order',compact('orders'));
+    }
 }
