@@ -38,6 +38,8 @@
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">CURRENCEY</th>
 
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">DELIVERED</th>
+
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">PRINT PDF</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,7 +56,7 @@
                         <td>{{ $order->currency }}</td>
                         <td>
                             @if ($order->status=='Pending')
-                            <a class="btn-btn success" href="{{ route('delivered',$order->id) }}">DELIVERED</a>
+                            <a class="btn-btn success" href="{{ route('delivered',$order->id) }}">DELIVER NOW</a>
                             @else
                                 <p>Delivered</p>
                             @endif

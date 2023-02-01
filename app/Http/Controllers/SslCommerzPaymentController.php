@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 
@@ -21,7 +21,7 @@ class SslCommerzPaymentController extends Controller
     public function index(Request $request)
     {
 
-
+        // dd($request->all());
 
         # Here you have to receive all the order data to initate the payment.
         # Let's say, your oder transaction informations are saving in a table called "orders"
@@ -33,15 +33,15 @@ class SslCommerzPaymentController extends Controller
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
+        $post_data['cus_name'] = $request->customer_name;
+        $post_data['cus_email'] = $request->customer_email;
         $post_data['cus_add1'] = 'Customer Address';
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = $request->customer_mobile;
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION

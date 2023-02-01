@@ -30,6 +30,9 @@
             @include('home.slider');
          <!-- end slider section -->
       </div>
+       <!-- product section -->
+       @include('home.product');
+       <!-- end product section -->
       <!-- why section -->
             @include('home.why');
       <!-- end why section -->
@@ -38,16 +41,14 @@
             @include('home.arrival');
       <!-- end arrival section -->
 
-      <!-- product section -->
-            @include('home.product');
-      <!-- end product section -->
+        <!-- client section -->
+        @include('home.client');
+        <!-- end client section -->
 
       <!-- subscribe section -->
             @include('home.subscribe');
       <!-- end subscribe section -->
-      <!-- client section -->
-            @include('home.client');
-      <!-- end client section -->
+
       <!-- footer start -->
             @include('home.footer');
       <!-- footer end -->
