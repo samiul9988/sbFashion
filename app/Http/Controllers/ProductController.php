@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class ProductController extends Controller
 {
@@ -205,5 +206,23 @@ class ProductController extends Controller
     {
         $orders = Order::all();
         return view('admin.layouts.product.order',compact('orders'));
+    }
+
+    public function delivered($id)
+    {
+        $orders = Order::find($id);
+
+        $orders->status = "Delivered";
+
+        $orders->save();
+
+        return redirect()->back();
+    }
+
+    public function print_pdf($id)
+    {
+        $orders = Order::find($id);
+        $pdf = PDF::loadView('admin.pdf',compact('orders'));
+        return $pdf->download('orders_details.pdf');
     }
 }

@@ -87,14 +87,7 @@
                   <p>Order</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('category') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Show Category</p>
-                </a>
-              </li>
-
-            </ul>
+              </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

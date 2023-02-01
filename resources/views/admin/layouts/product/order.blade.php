@@ -27,7 +27,7 @@
 
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">AMOUNT</th>
 
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">AMOUNT</th>
+
 
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">ADDRESS</th>
 
@@ -37,7 +37,7 @@
 
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">CURRENCEY</th>
 
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">ACTION</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">DELIVERED</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -53,7 +53,14 @@
                         <td>{{ $order->transaction_id }}</td>
                         <td>{{ $order->currency }}</td>
                         <td>
-                            {{-- <a href="{{ route('category_delete',$category->id) }}" class="btn btn-danger">DELETE</a> --}}
+                            @if ($order->status=='Pending')
+                            <a class="btn-btn success" href="{{ route('delivered',$order->id) }}">DELIVERED</a>
+                            @else
+                                <p>Delivered</p>
+                            @endif
+                        </td>
+                        <td>
+                            <a class="btn-btn secendary" href="{{ route('print_pdf',$order->id) }}">Print PDF</a>
                         </td>
                       </tr>
                     @endforeach

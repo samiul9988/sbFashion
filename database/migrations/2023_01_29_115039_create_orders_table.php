@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('currency')->nullable();
             $table->string('status')->nullable();
             $table->string('transaction_id')->nullable();
+            $table->timestamps();
         });
     }
 
