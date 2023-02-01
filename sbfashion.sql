@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 31, 2023 at 12:18 PM
+-- Generation Time: Feb 01, 2023 at 08:55 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -53,7 +53,10 @@ INSERT INTO `carts` (`id`, `name`, `email`, `phone`, `address`, `product_title`,
 (27, 'Kabir', 'kabir@gmail.com', '01645878958', 'Dhanmondi', 'Toy', '4', '1', '1674902024.png', '4', '4', '2023-01-31 00:57:45', '2023-01-31 00:57:45'),
 (28, 'Kabir', 'kabir@gmail.com', '01645878958', 'Dhanmondi', 'Ladies Frock', '500', '1', '1674901633.png', '8', '4', '2023-01-31 00:57:50', '2023-01-31 00:57:50'),
 (29, 'Kabir', 'kabir@gmail.com', '01645878958', 'Dhanmondi', 'Toy', '4', '1', '1674902024.png', '4', '4', '2023-01-31 04:29:18', '2023-01-31 04:29:18'),
-(30, 'MD JUBAYER HOSSAIN', 'user@gmail.com', '01633745588', 'Mirpur 12', 'Toy', '4', '1', '1674902024.png', '4', '2', '2023-01-31 05:16:44', '2023-01-31 05:16:44');
+(30, 'MD JUBAYER HOSSAIN', 'user@gmail.com', '01633745588', 'Mirpur 12', 'Toy', '4', '1', '1674902024.png', '4', '2', '2023-01-31 05:16:44', '2023-01-31 05:16:44'),
+(31, 'MD JUBAYER HOSSAIN', 'user@gmail.com', '01633745588', 'Mirpur 12', 'Toy', '16', '4', '1674902024.png', '4', '2', '2023-01-31 06:21:59', '2023-01-31 06:21:59'),
+(32, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Fancy Sarees', '300', '1', '1674901705.png', '9', '3', '2023-02-01 01:50:59', '2023-02-01 01:50:59'),
+(33, 'Kabir', 'admin@gmail.com', '01765421548', 'Dhanmondi', 'Shirt', '80', '1', '1674899430.png', '1', '3', '2023-02-01 01:51:05', '2023-02-01 01:51:05');
 
 -- --------------------------------------------------------
 
@@ -140,15 +143,19 @@ CREATE TABLE `orders` (
   `address` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `status` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `transaction_id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `currency` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL
+  `currency` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `created_at` timestamp(6) NULL DEFAULT NULL,
+  `updated_at` timestamp(6) NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `currency`) VALUES
-(9, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', 'Pending', '63d904f31cd36', 'BDT');
+INSERT INTO `orders` (`id`, `name`, `email`, `phone`, `amount`, `address`, `status`, `transaction_id`, `currency`, `created_at`, `updated_at`) VALUES
+(9, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', 'Delivered', '63d904f31cd36', 'BDT', '2021-02-18 07:33:29.000000', '2023-02-01 01:50:23.000000'),
+(10, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', '', '63d9fe6ed4618', 'BDT', NULL, NULL),
+(11, 'Customer Name', 'customer@mail.com', '8801XXXXXXXXX', 10, 'Customer Address', 'Delivered', '63da19f419ebd', 'BDT', NULL, '2023-02-01 02:53:14.000000');
 
 -- --------------------------------------------------------
 
@@ -232,8 +239,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('czvXVNrzMTKWQA4tynCkJo3bqgq26ZsM9fWsnfrf', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidDZoQnhhY2ZqZHJrdm15VWNVUmloM0NjNXFaYTdHV0xZZjBoenZkcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9leGFtcGxlMSI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjQ7fQ==', 1675161006),
-('sAjm6YqxNQaDKxT2K3iWdO5g1tmOx3VSUdbA0G9o', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiMHFSMXZ6eTNKTG5sY25WRk0zU0Joajlsdmk0WkFTZWRndEVOTkZ5WCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9zYmZhc2hpb24udGVzdC9jaGVja291dCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1675167096);
+('b9axd761pGx8D6Pq17YIjRSzZkzGiLIiOu8bevjk', 3, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoibHBtdjZKa1ZDdjUySWxuSjl0dEljQTZjMDBzY3duaGNTS1hMV05ZSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9zYmZhc2hpb24udGVzdC9wcmludF9wZGYvMTAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTozO30=', 1675241624);
 
 -- --------------------------------------------------------
 
@@ -347,7 +353,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -371,7 +377,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
