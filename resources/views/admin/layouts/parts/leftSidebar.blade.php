@@ -84,7 +84,7 @@
               <li class="nav-item">
                 <a href="{{ route('order') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Order</p>
+                  <p>Orders</p>
                 </a>
               </li>
               </ul>

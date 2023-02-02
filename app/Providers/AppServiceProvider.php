@@ -28,5 +28,13 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             View::share('products', Product::all());
         });
+
+        // // if($this->app->environment('production') || $this->app->environment('staging'))
+        // // {
+        // //     \URL::forceScheme('https');
+        // }
     }
+
+
+
 }

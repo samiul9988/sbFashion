@@ -10,6 +10,14 @@
             <div class="card-header">
               <h3 class="card-title">Order List</h3>
             </div>
+
+            <div style="padding-left: 400px; padding-bottom: 30px;">
+                <form action="{{ route('search') }}" method="GET">
+                    <input type="text" name="search" placeholder="Search Orders">
+                    <input type="submit" class="btn-btn-outline-primary" value="search">
+                </form>
+            </div>
+
             <!-- /.card-header -->
             <div class="card-body">
               <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12">
@@ -19,7 +27,7 @@
                 <tr>
                     <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
 
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending"> NAME</th>
+                    <th>NAME</th>
 
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">EMAIL</th>
 

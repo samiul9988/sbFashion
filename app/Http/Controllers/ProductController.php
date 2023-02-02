@@ -225,4 +225,41 @@ class ProductController extends Controller
         $pdf = PDF::loadView('admin.pdf',compact('orders'));
         return $pdf->download('orders_details.pdf');
     }
+
+    public function search(Request $request)
+    {
+
+        $searchText = $request->search;
+        $orders      = Order::where('name','LIKE',"%$searchText%")->orWhere('address','LIKE',"$searchText")->get();
+
+
+
+        return view('admin.layouts.product.order',compact('orders'));
+    }
+
+    public function order_page()
+    {
+        if(Auth::id())
+        {
+            $user = Auth::user();
+            $userId = $user->id;
+
+            $orders = Order::where('id','==','$userID')->get();
+            dd($orders);
+
+
+            return view('home.order_page',compact('orders'));
+        }else{
+            return redirect('login');
+        }
+    }
+
+    public function product_search(Request $request)
+    {
+        $searchText = $request->search;
+        $product    = Product::where('title','LIKE',"%$searchText%")->paginate(10);
+
+        return view('home.product',compact('product'));
+
+    }
 }

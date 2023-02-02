@@ -62,6 +62,12 @@ Route::put('/update_product/{id}',[ProductController::class,'update_product'])->
 
 Route::get('/product_details/{id}',[ProductController::class,'product_details'])->name('product_details');
 
+Route::get('/product_search',[ProductController::class,'product_search'])->name('product_search');
+
+Route::get('/search',[ProductController::class,'search'])->name('search');
+
+Route::get('/order_page',[ProductController::class,'order_page'])->name('order_page');
+
 Route::post('/add_cart/{id}',[ProductController::class,'add_cart'])->name('add_cart');
 
 Route::get('/show_cart',[ProductController::class,'show_cart'])->name('show_cart');
