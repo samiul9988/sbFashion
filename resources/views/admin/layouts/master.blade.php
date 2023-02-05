@@ -53,7 +53,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @include('admin.layouts.parts.contentHeader');
+            {{-- @include('admin.layouts.parts.contentHeader'); --}}
 
             <!-- Main content -->
             <section class="content">
