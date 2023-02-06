@@ -245,7 +245,7 @@ class ProductController extends Controller
             $userId = $user->id;
 
             $orders = Order::where('id','==','$userID')->get();
-            dd($orders);
+        
 
 
             return view('home.order_page',compact('orders'));

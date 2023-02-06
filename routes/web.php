@@ -83,7 +83,7 @@ Route::get('/search',[ProductController::class,'search'])->name('search');
 
 Route::get('/order_page',[ProductController::class,'order_page'])->name('order_page');
 
-Route::post('/add_cart/{id}',[ProductController::class,'add_cart'])->name('add_cart');
+Route::any('/add-to-cart',[ProductController::class,'addToCart'])->name('add_to_cart');
 
 Route::get('/show_cart',[ProductController::class,'show_cart'])->name('show_cart');
 

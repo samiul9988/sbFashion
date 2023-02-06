@@ -11,7 +11,7 @@
       <meta name="description" content="" />
       <meta name="author" content="" />
       <link rel="shortcut icon" href="images/favicon.png" type="">
-      <title>Famms - Fashion HTML Template</title>
+      <title>sbFashion</title>
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
       <!-- font awesome style -->
@@ -81,7 +81,7 @@
             window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
         })(window, document);
     </script>
-
+    @stack('scripts')
    </body>
 </html>
-home/
+

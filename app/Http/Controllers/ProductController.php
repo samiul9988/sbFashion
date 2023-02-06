@@ -215,8 +215,10 @@ class ProductController extends Controller
         return view('home.product_details',compact('product'));
     }
 
-    public function add_cart(Request $request,$id)
+    public function addToCart(Request $request)
     {
+        $id = $request->query("id");
+        
         if(Auth::id())
         {
             $user                 = Auth::user();
@@ -356,8 +358,6 @@ class ProductController extends Controller
             $userId = $user->id;
 
             $orders = Order::where('id','==','$userID')->get();
-            dd($orders);
-
 
             return view('home.order_page',compact('orders'));
         }else{
